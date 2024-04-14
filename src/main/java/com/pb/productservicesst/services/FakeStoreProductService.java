@@ -14,6 +14,7 @@ public class FakeStoreProductService implements ProductService{
     @Override
     public Product getProductById(Long id) {
         //chef business logic call fake store to get product with given id
+//        throw new RuntimeException("Service not up");
         RestTemplate restTemplate=new RestTemplate();
         FakeStoreProductDto fakeStoreProductDto=
                 restTemplate.getForObject("https://fakestoreapi.com/products/"+id,
